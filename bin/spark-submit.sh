@@ -16,15 +16,16 @@ export PYSPARK_PYTHON=./environment/bin/python3
 spark-submit --archives $BINDIR/pyspark_conda_env.tar.gz#environment\
   --conf spark.shuffle.service.enabled=true\
   --conf spark.dynamicAllocation.enabled=true\
-  --conf spark.dynamicAllocation.minExecutors=5\
-  --conf spark.dynamicAllocation.maxExecutors=50\
-  --conf spark.dynamicAllocation.initialExecutors=5\
-  --conf spark.executor.memory=16g\
-  --conf spark.driver.memory=16g\
-  --conf spark.yarn.executor.memoryOverhead=8g\
-  --conf spark.driver.maxResultSize=4g\
+  --conf spark.dynamicAllocation.minExecutors=2\
+  --conf spark.dynamicAllocation.maxExecutors=2\
+  --conf spark.dynamicAllocation.initialExecutors=2\
+  --conf spark.executor.memory=1g\
+  --conf spark.driver.memory=1g\
+  --conf spark.yarn.executor.memoryOverhead=1g\
+  --conf spark.driver.maxResultSize=1g\
   --conf spark.hadoop.hive.metastore.uris= \
-  --master yarn-cluster\
+  --master yarn\
+  --deploy-mode cluster\
   --queue dev\
   $BINDIR/sparkapp.py $@
 
