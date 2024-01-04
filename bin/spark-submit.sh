@@ -26,7 +26,7 @@ spark-submit --archives $BINDIR/pyspark_conda_env.tar.gz#environment\
   --conf spark.hadoop.hive.metastore.uris= \
   --master yarn\
   --deploy-mode cluster\
-  --queue dev\
+  --queue default\
   $BINDIR/sparkapp.py $@
 
 exit $?
