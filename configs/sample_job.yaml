@@ -1,10 +1,10 @@
-base_dir: './datasets/test_sample_jsonl_data'
+base_dir: 's3://team-model-data-preprocess/test/datasets/test_sample_jsonl_data/'
 targets: 
     - 0
     - 1
     - 2
     - 3
-output_dir: './datasets/test_output_data'
+output_dir: 's3://team-model-data-preprocess/test/output/sample_test'
 
 sample_ratio: 0.1
 seed: 1234
