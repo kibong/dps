@@ -1,8 +1,8 @@
-base_dir: './datasets/test_korean_jsonl_data'
+base_dir: 's3://team-model-data-preprocess/test/dataset/test_korean_jsonl_data/'
 targets:
   - 0
   - 1
-output_dir: './datasets/test_output_data'
+output_dir: 's3://team-model-data-preprocess/test/output/'
 
 n_dist: 10
 n_output: 1
