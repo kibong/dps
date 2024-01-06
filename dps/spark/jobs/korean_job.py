@@ -28,7 +28,7 @@ from dps.spark.prep.lang_agnostic_prep import (
     replace_email_and_url,
     remove_repeated_text,
 )
-from dps.spark.spark_session import spark_session, spark_session_for_cluster
+from dps.spark.spark_session import spark_session
 from dps.spark.utils.io_utils import read_line, to_json
 
 
@@ -63,9 +63,8 @@ def korean_job(config_path):
         input_paths = f'{conf["base_dir"]}/*/*.jsonl'
     else:
         input_paths = ','.join([f'{conf["base_dir"]}/{t}/*.jsonl' for t in conf["targets"]])
-    session_fn = spark_session_for_cluster if conf["is_cluster"] else spark_session
 
-    with session_fn("korean text processing job") as spark:
+    with spark_session("korean text processing job") as spark:
         sc: SparkContext = spark.sparkContext
 
         # set heap memorty

@@ -1,12 +1,11 @@
-base_dir: 's3://team-model-data-preprocess/test/dataset/test_korean_jsonl_data/'
+base_dir: 's3://team-model-data-preprocess/test/datasets/test_korean_jsonl_data/'
 targets:
   - 0
   - 1
-output_dir: 's3://team-model-data-preprocess/test/output/'
+output_dir: 's3://team-model-data-preprocess/test/output/test_korean'
 
 n_dist: 10
 n_output: 1
-is_cluster: False
 min_doc_len: 50
 max_doc_len: 100000
 min_mean_word_len: 3
